@@ -1,0 +1,105 @@
+/* .navbar .navbar-nav li {
+    padding: 0px 8px 0px 8px;
+    border: 1px solid transparent;
+    border-radius: 0.2em;
+    margin: 0px 1px 0px 1px;
+}
+
+.navbar .navbar-nav li:hover {
+    border-color: #e7e7e7;
+} */
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+    body .container {
+        margin-left: 3vw;
+        margin-right: 3vw;
+        width: 94vw;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex .panel {
+        width: -webkit-fill-available;
+        ;
+    }
+}
+
+@media (max-width: 1200px) {
+    body .container {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    body nav {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    body nav .container .navbar-header {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    body nav .container .navbar-header {
+        margin-left: 0px;
+    }
+
+    body nav .container .navbar-header .navbar-toggle {
+        margin-right: 30px;
+    }
+
+    .navbar-collapse.collapsing .nav.navbar-nav.navbar-right,
+    .navbar-collapse.collapse .nav.navbar-nav.navbar-right {
+        padding-left: 15px;
+    }
+
+    .navbar-collapse .nav li {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .navbar-collapse .nav li a {
+        display: table-cell;
+        width: calc(100vw - 32px);
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+body header nav.navbar.navbar-default {
+    border: none !important;
+    border-bottom: 1px solid #777 !important;
+}
+
+.navbar-default .navbar-nav li a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 14px;
+    border: 1px solid transparent;
+}
+
+.selected-menu,
+.navbar-default .navbar-nav li a:hover {
+    border-color: #777;
+    border-radius: 3px;
+}
+
+.footer {
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 60px;
+    /* Vertically center the text there */
+}
