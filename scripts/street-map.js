@@ -3,7 +3,7 @@ const draw_street_map = () => {
         .select("#street-map-svg")
         .append("svg")
         .attr("width", shapes_utility.config.dimensions.mapWidth)
-        .attr("height", shapes_utility.config.dimensions.mapHeight);
+        .attr("height", shapes_utility.config.dimensions.mapHeight + 30);
 
     let mapContainer = street_map_svg
         .append("g")
@@ -120,13 +120,13 @@ const plot_pumps = (mapContainer) => {
 const plot_deaths = (mapContainer) => {
     const death = mapContainer
         .append("g")
-        .selectAll(".age-sex-circle")
+        .selectAll(".death-circle")
         .data(data.deaths_age_sex_data);
 
     death
         .enter()
         .append("circle")
-        .attr("class", "age-sex-circle")
+        .attr("class", "death-circle")
         .attr("cx", (d) => shapes_utility.x(d.x))
         .attr("cy", (d) => shapes_utility.y(d.y))
         .attr("r", 4)
@@ -153,4 +153,8 @@ const plot_deaths = (mapContainer) => {
         .on("mouseout", function (event) {
             shapes_utility.tooltip.hide(500);
         });
+
+
+    plotTimelineChart();
+
 }

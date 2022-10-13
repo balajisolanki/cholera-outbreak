@@ -195,3 +195,12 @@ body header nav.navbar.navbar-default {
         transform: rotate(-360deg);
     }
 }
+
+.svg-area svg text {
+    font-size: 12px;
+}
+
+.svg-area svg text.axis-label {
+    font-size: 16px;
+    font-weight: 600;
+}
