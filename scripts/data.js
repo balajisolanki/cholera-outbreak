@@ -1,20 +1,36 @@
 
 var data = {
-    street_data: [],
-    deaths_age_sex_data: [],
-    deathdays_data: [],
-    pumps_data: [],
-    street_data_reduced: [],
+    streetData: [],
+    deathsAgeSexData: [],
+    deathDaysData: [],
+    pumpsData: [],
+    streetDataReduced: [],
 
-    load_data: async (callback) => {
-        data.street_data = await d3.json("data/streets.json");
-        data.pumps_data = await d3.csv("data/pumps.csv");
-        data.deaths_age_sex_data = await d3.csv("data/deaths_age_sex.csv");
-        data.deathdays_data = await d3.csv("data/deathdays.csv");
+    loadData: async (callback) => {
+        data.streetData = await d3.json("data/streets.json");
+        data.pumpsData = await d3.csv("data/pumps.csv");
+        data.deathsAgeSexData = await d3.csv("data/deaths_age_sex.csv");
+        data.deathDaysData = await d3.csv("data/deathdays.csv");
 
-        if (data.street_data && data.street_data.length > 0) {
-            data.street_data_reduced = data.street_data.reduce((prev, curr) => prev.concat(curr), []);
-            callback();
+        if (data.streetData && data.streetData.length > 0) {
+            data.streetDataReduced = data.streetData.reduce((prev, curr) => prev.concat(curr), []);
+
+            let index = 0;
+
+            if (data.deathDaysData && data.deathDaysData.length > 0) {
+
+                data.deathDaysData.map((item) => {
+                    let countOfDeaths = item.deaths;
+                    while (countOfDeaths > 0 && index < data.deathsAgeSexData.length) {
+                        data.deathsAgeSexData[index].date = formatTime(new Date(item.date + '-' + config.year));
+                        
+                        countOfDeaths--;
+                        index++;
+                    }
+                });
+
+                callback(data.streetData);
+            }
         }
     }
 };

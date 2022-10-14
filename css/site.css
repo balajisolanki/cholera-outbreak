@@ -196,6 +196,10 @@ body header nav.navbar.navbar-default {
     }
 }
 
+.chart-area {
+    overflow: auto;
+}
+
 .svg-area svg text {
     font-size: 12px;
 }
@@ -203,4 +207,18 @@ body header nav.navbar.navbar-default {
 .svg-area svg text.axis-label {
     font-size: 16px;
     font-weight: 600;
+}
+
+.arc {
+    opacity: 0.7;
+    stroke: #ddd;
+    stroke-width: 0.5px;
+    cursor: pointer;
+}
+
+.arc-text,
+.arc-percentage {
+    text-anchor: middle;
+    pointer-events: none;
+    font-weight: bold;
 }

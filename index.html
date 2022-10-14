@@ -56,7 +56,7 @@
                     <div class="panel panel-info">
                         <div class="panel-heading">London Street Map</div>
                         <div class="panel-body">
-                            <div id="street-map-svg" class="align-center"></div>
+                            <div id="street-map-svg" class="chart-area align-center"></div>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading">Deaths per day timeline</div>
                                 <div class="panel-body">
-                                    <div id="line-chart-svg" class="align-center svg-area"></div>
+                                    <div id="line-chart-svg" class="chart-area align-center svg-area"></div>
                                 </div>
                             </div>
                         </div>
@@ -74,17 +74,17 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="panel panel-info">
-                                <div class="panel-heading">Pie Chart</div>
+                                <div class="panel-heading">Deaths by age group</div>
                                 <div class="panel-body">
-                                    Panel content
+                                    <div id="bar-chart-svg" class="chart-area align-center"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="panel panel-info">
-                                <div class="panel-heading">Bar Chart</div>
+                                <div class="panel-heading">Deaths by gender</div>
                                 <div class="panel-body">
-                                    Panel content
+                                    <div id="pie-chart-svg" class="chart-area align-center"></div>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,8 @@
     <div class="screen-overlay">
         <div class="screen-overlay-container">
             <div class="screen-overlay-content">
-                <img src="img/screen_rotate.png" class="rotate" alt="For better experience view in landscape mode or on bigger screens with width more than 700 pixels." />
+                <img src="img/screen_rotate.png" class="rotate"
+                    alt="For better experience view in landscape mode or on bigger screens with width more than 700 pixels." />
                 <div>
                     For better experience view in landscape mode or on bigger screens with width more than 700 pixels.
                 </div>
@@ -125,6 +126,7 @@
     <script src="scripts/shape-utilities.js"></script>
     <script src="scripts/street-map.js"></script>
     <script src="scripts/timeline-chart.js"></script>
+    <script src="scripts/pie-chart.js"></script>
     <script src="scripts/site.js"></script>
 
 </body>
