@@ -110,6 +110,24 @@ const drawStreetMap = (streetData) => {
         .on("mousemove", zoomInCircle)
         .on("mouseout", zoomOutCircle);
 
+    let streets = [
+        { name: 'Broad Street', x: 3.8, y: 3.25, angle: -28 },
+        { name: 'Oxford Street', x: 2.8, y: 1.15, angle: -12 },
+        { name: 'Regent Street', x: 1.78, y: 3.8, angle: 62 },
+        { name: 'Dean Street', x: 5.84, y: 2.5, angle: 67 },
+    ];
+
+    mapLegend
+        .selectAll(".streets")
+        .data(streets)
+        .enter()
+        .append("text")
+        .attr('class', 'street')
+        .attr("dy", ".35em")
+        .attr("text-anchor", "middle")
+        .attr("transform", (d) => `translate(${d.x * (config.dimensions.mapWidth / 7)}, ${d.y * (config.dimensions.mapHeight / 7)}) rotate(${d.angle})`)
+        .text((d) => d.name);
+
     plotPumps(data.pumpsData);
 }
 

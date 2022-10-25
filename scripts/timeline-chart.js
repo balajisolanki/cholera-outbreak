@@ -128,8 +128,6 @@ function plotTimelineChart(deathDays) {
             // Change opacity
             d3.selectAll(".data-point").attr("opacity", 0.2);
 
-            // showOrHideDeaths("death-circle", "hidden");
-
             if (selectedDates && selectedDates.length > 0) {
                 for (let ind in selectedDates) {
                     d3.select("#__" + selectedDates[ind]).attr("opacity", 1);
