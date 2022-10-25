@@ -1,3 +1,11 @@
+const zoomInCircle = (event, eventData) =>
+    d3.selectAll(`.${eventData.replaceAll(' ', '-').toLowerCase()}-circle`)
+        .attr('r', 10);
+
+const zoomOutCircle = (event, eventData) =>
+    d3.selectAll(`.${eventData.replaceAll(' ', '-').toLowerCase()}-circle`)
+        .attr('r', 8);
+
 const drawStreetMap = (streetData) => {
     let streetMapSvg = d3
         .select("#street-map-svg")
@@ -24,7 +32,7 @@ const drawStreetMap = (streetData) => {
         .attr("class", "work-house-circle")
         .attr("cx", 3.5 * (config.dimensions.mapWidth / 7))
         .attr("cy", 2.3 * (config.dimensions.mapHeight / 7))
-        .attr("r", "8px")
+        .attr("r", 8)
         .attr("fill", (d) => shapesUtility.mapLegendColorScale("Work House"))
         .on("mouseover", function (event, eventData) {
             shapesUtility.tooltip.show({
@@ -49,9 +57,8 @@ const drawStreetMap = (streetData) => {
         .attr("class", "brewery-circle")
         .attr("cx", 4.45 * (config.dimensions.mapWidth / 7))
         .attr("cy", 3.1 * (config.dimensions.mapHeight / 7))
-        .attr("r", "8px")
+        .attr("r", 8)
         .attr("fill", (d) => shapesUtility.mapLegendColorScale("Brewery"))
-        .attr("stroke", "none")
         .on("mouseover", function (event, eventData) {
             shapesUtility.tooltip.show({
                 content: 'Brewery',
@@ -81,10 +88,14 @@ const drawStreetMap = (streetData) => {
         .data(config.mapLabels)
         .enter()
         .append("circle")
+        .attr('class', 'legend-circle')
         .attr("cx", (d, i) => i * (config.dimensions.mapWidth / config.mapLabels.length))
         .attr("cy", 0)
         .attr("r", 6)
-        .attr("fill", (d) => shapesUtility.mapLegendColorScale(d));
+        .attr("fill", (d) => shapesUtility.mapLegendColorScale(d))
+        .on("mouseover", zoomInCircle)
+        .on("mousemove", zoomInCircle)
+        .on("mouseout", zoomOutCircle);
 
     mapLegend
         .selectAll("text")
@@ -94,15 +105,17 @@ const drawStreetMap = (streetData) => {
         .attr("x", (d, i) => 15 + i * (config.dimensions.mapWidth / config.mapLabels.length))
         .attr("y", 0)
         .attr("dy", "0.35em")
-        .attr("text-anchor", "start")
-        .text((d) => d);
+        .text((d) => d)
+        .on("mouseover", zoomInCircle)
+        .on("mousemove", zoomInCircle)
+        .on("mouseout", zoomOutCircle);
 
     plotPumps(data.pumpsData);
 }
 
 const plotPumps = (pumpsData) => {
     shapesUtility.removeSvgGroup("#street-map-svg .map-container #pump-circle-group");
-    
+
     mapContainer = d3.select("#street-map-svg")
         .select(".map-container")
 

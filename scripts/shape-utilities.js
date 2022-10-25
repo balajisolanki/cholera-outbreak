@@ -1,12 +1,12 @@
 var config = {
     year: 1850,
     dimensions: {
-        barHeight: 300,
-        barWidth: 700,
-        mapHeight: 600,
-        mapWidth: 600,
-        pieHeight: 300,
-        pieWidth: 350,
+        lineHeight: 300,
+        lineWidth: 700,
+        mapHeight: 530,
+        mapWidth: 530,
+        pieHeight: 250,
+        pieWidth: 250,
     },
     mapLabels: ["Male", "Female", "Pump", "Brewery", "Work House"]
 }
