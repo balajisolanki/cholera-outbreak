@@ -4,8 +4,8 @@ let selectedDates = [];
 function plotTimelineChart(deathDays) {
     let deathDaysDataset = [];
 
-    let width = config.dimensions.barWidth;
-    let height = config.dimensions.barHeight;
+    let width = config.dimensions.lineWidth;
+    let height = config.dimensions.lineHeight;
     let padding = 50;
 
     let lineChartSvg = d3
@@ -145,10 +145,10 @@ function plotTimelineChart(deathDays) {
             }
 
             plotDeaths(newData);
-            drawPieChart(newData);
-
+            drawGenderDonutChart(newData);
+            drawAgeGroupDonutChart(newData);
         });
 
-    drawPieChart(data.deathsAgeSexData);
-
+    drawGenderDonutChart(data.deathsAgeSexData);
+    drawAgeGroupDonutChart(data.deathsAgeSexData)
 }
