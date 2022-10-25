@@ -115,7 +115,7 @@ body header nav.navbar.navbar-default {
 
 .selected-menu,
 .navbar-default .navbar-nav li a:hover {
-    border-color: #777;
+    border-color: #777 !important;
     border-radius: 3px;
 }
 
@@ -221,4 +221,13 @@ body header nav.navbar.navbar-default {
     text-anchor: middle;
     pointer-events: none;
     font-weight: bold;
+}
+
+.street {
+    fill: #aaa;
+    font-size: 20px;
+}
+
+.no-border, .table.no-border tr td {
+    border: 1px solid transparent;
 }
