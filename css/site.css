@@ -228,14 +228,19 @@ body header nav.navbar.navbar-default {
     font-size: 20px;
 }
 
-.no-border, .table.no-border tr td {
+.no-border,
+.table.no-border tr td {
     border: 1px solid transparent;
 }
 
-.justify-text{
+.justify-text {
     text-align: justify;
 }
 
-.doc-img{
+.doc-img {
     border: 1px solid #18a3b8;
+}
+
+.panel-group .panel-group {
+    margin-bottom: 0px;
 }
