@@ -51,8 +51,369 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            <div>
-                Documentation under construction...
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingAbout">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAbout"
+                                aria-expanded="true" aria-controls="collapseAbout">
+                                <strong>About</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseAbout" class="panel-collapse collapse in" role="tabpanel"
+                        aria-labelledby="headingAbout">
+                        <div class="panel-body justify-text">
+                            <p>The main goal of this project is to use the D3 library to reconstruct Dr. John Snow's
+                                map. Along with reconstructing the original map in an interactive format, I also added
+                                extra charts to the map's side and interface components to make the data more engaging.
+                            </p>
+                            <p>This project is created by <a href="/" target="_blank">Balaji Rao Solanki</a> as part of the H517 - Visualization
+                                Design, Analysis, & Evaluation course.
+                            </p>
+                            <br>
+                            <p><i><strong>The datasets used are</strong></i></p>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="https://khreda.com/teaching/fall22/H517/project1/cholera_data/streets.json">streets.json</a>
+                                    - Provides a set of line segments representing the street coordinates. The file is
+                                    constructed as a JSON array or arrays; the higher-level array essentially contains a
+                                    list of all street segments. Each street segment is represented by an array of X,
+                                    Ytuples, or the segment's vertices.
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://khreda.com/teaching/fall22/H517/project1/cholera_data/pumps.csv">pumps.csv</a>
+                                    - Provides the (X, Y) coordinates of the pumps on the street map.
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://khreda.com/teaching/fall22/H517/project1/cholera_data/pumps.csv">deathdays.csv</a>
+                                    - Provides the number of deaths for each day of the outbreak.
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://khreda.com/teaching/fall22/H517/project1/cholera_data/deaths_age_sex.csv">deaths_age_sex.csv</a>
+                                    - Provides the age and sex of the victim together with the (X, Y)
+                                    coordinates of each death in the death days file, in sequence.
+                                </li>
+
+                            </ul>
+                            <br>
+                            <br>
+                            <p> <a href="https://khreda.com/teaching/fall22/H517/project1">Click here</a> for detailed
+                                information about the problem statement.
+                            </p>
+                            <p> <a href="data/Cholera Outbreak Documentation.pdf" target="_blank">Click here</a> to download the PDF version of this documentation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingDesign">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseDesign"
+                                aria-expanded="true" aria-controls="collapseDesign">
+                                <strong>Design</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseDesign" class="panel-collapse collapse in" role="tabpanel"
+                        aria-labelledby="headingDesign">
+                        <div class="panel-body justify-text">
+                            <div class="panel-group" id="innerAccordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingDesignLayout">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#innerAccordion"
+                                                href="#collapseDesignLayout" aria-expanded="true"
+                                                aria-controls="collapseAbout">
+                                                <strong>1. Layout</strong>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseDesignLayout" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingDesignLayout">
+                                        <div class="panel-body justify-text">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-5">
+                                                    <img class="doc-img" src="img/documentation/ScratchWork_Cropped.jpg"
+                                                        alt="Scratch work for the design process" width="100%"
+                                                        height="100%">
+                                                </div>
+                                                <div class="col-lg-8 col-md-7">
+                                                    <br>
+                                                    <p>
+                                                        Based on my understanding of the datasets, I started outlining
+                                                        the dashboard's basic layout after becoming familiar with the
+                                                        data and the information in the dataset the image here.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingDesignProcess">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#innerAccordion"
+                                                href="#collapseDesignProcess" aria-expanded="true"
+                                                aria-controls="collapseAbout">
+                                                <strong>2. Design Process</strong>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseDesignProcess" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingDesignProcess">
+                                        <div class="panel-body justify-text">
+                                            <p> I used bootstrap CSS for the responsiveness of the page and the
+                                                whole
+                                                website is designed for almost all the screens starting from a
+                                                mobile
+                                                device with minimum screen width of 700px. I have used grid
+                                                layout,
+                                                panels, nav bars, responsive tables provided by bootstrap
+                                                library.
+                                                Alongside bootstrap, I have also written some part of custom CSS
+                                                to
+                                                customize my web pages.
+                                            </p>
+                                            <br>
+                                            <ul>
+                                                <li>
+                                                    <p> Map lines are drawn using dark grey, this was done to provide
+                                                        clean lines that don't distract from the scatter plot of deaths
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p> Pumps are plotted in green and larger circles than death points
+                                                        so that they are noticeable and do not interfere with the death
+                                                        points.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Death points are in blue and orange for male and female victims
+                                                        respectively and the same has been used in the gender donut
+                                                        chart.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingVisualizations">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseVisualizations" aria-expanded="true"
+                                aria-controls="collapseVisualizations">
+                                <strong>Visualizations</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseVisualizations" class="panel-collapse collapse in" role="tabpanel"
+                        aria-labelledby="headingVisualizations">
+                        <div class="panel-body justify-text">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-5 col-sm-6">
+                                    <img src="img/documentation/StreetMap.png" alt="Street map" width="100%"
+                                        height="100%">
+                                </div>
+                                <div class="col-lg-9 col-md-7 col-sm-6">
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                Created a stable interactive map with streets, water pumps, landmarks,
+                                                and
+                                                victims’ locations. Pumps, brewery and work house points zoomed when the
+                                                cursor
+                                                is hovered on the respective item in the legend.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-7 col-md-6 col-sm-12">
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                Created an interactive time series graph with the number of deaths per
+                                                day
+                                                during the epidemic and with cursor events, a tooltip will be displayed
+                                                on the
+                                                data points in the chart.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                    <img src="img/documentation/TimeSeriesChart.png" alt="Time series chart"
+                                        width="100%" height="100%">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                When a data point is selected/unselected by clicking on it the death
+                                                points will
+                                                be updated and both gender and age group donut charts will be redrawn
+                                                for the
+                                                deaths of the selected days. You can find these differences in the these
+                                                two
+                                                pictures.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img src="img/documentation/DefaultDashboard.png" alt="Default dashboard"
+                                        width="100%" height="100%">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img src="img/documentation/DataPointSelected.png"
+                                        alt="Dashboard with data points selected" width="100%" height="100%">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                Both the donut charts are interactive, when the mouse is hovered a
+                                                tooltip will display the more information about the selected arc/pie in
+                                                the donut chart and the death points will be updated on the street map.
+                                                The other arcs/pies will be blurred when a pic/arc is focused. Changes
+                                                can be observed in the default dashboard picture vs below pictures.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img src="img/documentation/AgeGroupHover.png"
+                                        alt="Dashboard when age group donut hovered" width="100%" height="100%">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img src="img/documentation/GenderDonutHover.png"
+                                        alt="Dashboard when gender donut hovered" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObservations">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseObservations" aria-expanded="true" aria-controls="collapseObservations">
+                                <strong>Observations</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObservations" class="panel-collapse collapse in" role="tabpanel"
+                        aria-labelledby="headingObservations">
+                        <div class="panel-body justify-text">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-7 col-sm-6">
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                Young individuals and older adults die more frequently than persons of
+                                                other ages, as it is evident from the age group donut chart. This
+                                                pattern is in line with the idea that younger and older persons tend to
+                                                have more virulent infectious illnesses.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3 col-md-5 col-sm-6">
+                                    <img src="img/documentation/DeathsByAgeGroup.png" alt="Deaths by age group"
+                                        width="100%" height="100%">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-8 col-md-7 col-sm-6">
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                A collection of instances centered on a certain pump could be seen on
+                                                the map with clarity. That cholera was being transmitted by contaminated
+                                                water is made clearer by this.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 col-md-5 col-sm-6">
+                                    <img src="img/documentation/PumpsCluster.png" alt="Pumps cluster" width="100%"
+                                        height="100%">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-5 col-sm-6">
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                From the time series plot, the death rate spiked from Aug 30 to Sep 10
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 col-md-7 col-sm-6">
+                                    <img src="img/documentation/TimeSeriesChartSpike.png" alt="Deaths spiked"
+                                        width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingReferences">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReferences"
+                                aria-expanded="true" aria-controls="collapseReferences">
+                                <strong>References</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseReferences" class="panel-collapse collapse in" role="tabpanel"
+                        aria-labelledby="headingReferences">
+                        <div class="panel-body justify-text">
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/d3/d3/wiki">D3 Wiki</a>
+                                </li>
+                                <li>
+                                    <a href="https://observablehq.com/@d3/gallery">D3 Examples</a>
+                                </li>
+                                <li>
+                                    <a href="https://getbootstrap.com/docs/3.4/components">Bootstrap Components</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>

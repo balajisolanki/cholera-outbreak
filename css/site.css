@@ -231,3 +231,11 @@ body header nav.navbar.navbar-default {
 .no-border, .table.no-border tr td {
     border: 1px solid transparent;
 }
+
+.justify-text{
+    text-align: justify;
+}
+
+.doc-img{
+    border: 1px solid #18a3b8;
+}
