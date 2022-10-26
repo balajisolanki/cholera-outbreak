@@ -5,7 +5,7 @@
 
 The main goal of this project is to use the D3 library to reconstruct Dr. John Snow's map. Along with reconstructing the original map in an interactive format, I also added extra charts to the map's side and interface components to make the data more engaging.
 
-This project is created by [Balaji Rao Solanki](/) as part of the H517 - Visualization Design, Analysis, & Evaluation course.
+This project is created by [Balaji Rao Solanki](https://balajisolanki.github.io) as part of the H517 - Visualization Design, Analysis, & Evaluation course.
 
 _**The datasets used are**_
 
@@ -16,7 +16,7 @@ _**The datasets used are**_
 
 [Click here](https://khreda.com/teaching/fall22/H517/project1) for detailed information about the problem statement.
 
-[Click here](data/Cholera%20Outbreak%20Documentation.pdf) to download the PDF version of this documentation.
+[Click here](https://balajisolanki.github.io/cholera-outbreak/data/Cholera%20Outbreak%20Documentation.pdf) to download the PDF version of this documentation.
 
 ## **Design**
 
